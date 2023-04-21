@@ -1,0 +1,8 @@
+main: ml.nennneko5787.minecraft.LunaChatSkript.Main
+name: LunaChat-Skript
+version: '${project.version}'
+description: I think I can run LunaChat from Skript. Lots of bugs!
+author: nennneko5787
+
+depend: [ Skript, LunaChat ]
+prefix: LunaChat-Skript
