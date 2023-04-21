@@ -6,7 +6,7 @@
 
     <groupId>ml.nennneko5787.minecraft</groupId>
     <artifactId>LunaChat-Skript</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1.1</version>
     <packaging>jar</packaging>
 
     <name>LunaChat-Skript</name>

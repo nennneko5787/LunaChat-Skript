@@ -37,6 +37,8 @@ public final class Main extends JavaPlugin {
 			this.onDisable();
 		}
 
+		getLogger().warning("Update checks contain bugs and will be skipped!");
+		/*
 		final PluginUpdater updater = PluginUpdater.create(this, "nennneko5787", "LunaChat-Skript");
 		final PluginUpdater.UpdateState state = updater.check();
 		switch (state) {
@@ -52,6 +54,7 @@ public final class Main extends JavaPlugin {
 				getLogger().warning("Detected a test version of LunaChat-Skript. Please report bugs on our GitHub.");
 				break;
 		}
+		*/
 		
 		/* This creates config.yml and all other websk folders
 		this.saveDefaultConfig();
