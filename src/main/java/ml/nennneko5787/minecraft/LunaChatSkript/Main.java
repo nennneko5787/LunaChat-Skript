@@ -9,11 +9,10 @@ import ml.nennneko5787.minecraft.LunaChatSkript.utils.adapter.SkriptV2_3;
 import ml.nennneko5787.minecraft.LunaChatSkript.utils.adapter.SkriptV2_6;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.Server;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import com.github.ucchyocean.lc3.LunaChatAPI;
-import com.github.ucchyocean.lc3.LunaChatBukkit;
 
 import java.io.IOException;
 
@@ -22,8 +21,8 @@ public final class Main extends JavaPlugin {
 	private SkriptAddon addon;
 	private static SkriptAdapter skriptAdapter;
 	public static boolean use26;
-	public static LunaChatAPI lunachatapi;
 	private static Main instance;
+	public static Server serverInstance;
 
 	@Override
 	public void onEnable() {
@@ -70,13 +69,7 @@ public final class Main extends JavaPlugin {
 		final boolean use26 = ReflectionUtils.classExist("ch.njol.skript.conditions.CondIsPluginEnabled");
 		skriptAdapter = use26 ? new SkriptV2_6() : new SkriptV2_3();
 		Main.use26 = use26;
-
-		//LunaChat API Get Instance
-		final LunaChatAPI lunachatapi;
-		if (getServer().getPluginManager().isPluginEnabled("LunaChat")) {
-			lunachatapi = ((LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat")).getLunaChatAPI();
-			Main.lunachatapi = lunachatapi;
-		}
+		Main.serverInstance = getServer();
 	}
 	
 	public static Main getInstance() {
